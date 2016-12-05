@@ -13,10 +13,10 @@
           New Quote
         </div>
 
-        <div class="ui twitter button">
+        <a class="ui twitter button" :href="tweetLink" target="_blank">
           <i class="twitter icon"></i>
           Tweet it!
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -33,6 +33,11 @@ export default {
       quoteLink: '',
       defaultAuthor: 'Anonymous',
     };
+  },
+  computed: {
+    tweetLink() {
+      return `https://twitter.com/intent/tweet?text=${this.quoteText} ${this.quoteAuthor}`;
+    },
   },
   mounted() {
     this.getNewQuote();

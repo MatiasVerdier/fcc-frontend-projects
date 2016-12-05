@@ -1,16 +1,21 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
+import VueJsonp from 'vue-jsonp';
+
 // Components
 import App from './App';
 import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
+import RandomQuotes from './pages/RandomQuotes';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(VueJsonp);
 
 const routes = [
   { path: '/', component: Home, name: 'home' },
+  { path: '/projects/random-quotes', component: RandomQuotes },
 ];
 
 // Add 404 route at the end for unhandled routes
